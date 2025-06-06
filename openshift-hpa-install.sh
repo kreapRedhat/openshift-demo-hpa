@@ -7,4 +7,4 @@ oc wait --for=condition=ready --timeout=60s pod -l app=backend
 BACKEND_URL=http://$(oc get route backend -n hpa-project -o jsonpath='{.spec.host}')
 curl -v -k $BACKEND_URL
 oc apply -f manifests/backend-cpu-hpa.yaml -n hpa-project
-watch oc get horizontalpodautoscaler/backend-cpu -n hpa-project
+#watch oc get horizontalpodautoscaler/backend-cpu -n hpa-project
